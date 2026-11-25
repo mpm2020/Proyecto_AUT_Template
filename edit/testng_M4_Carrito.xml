@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite de Pruebas M4">
+ <test name="Abrir Automatización en chrome">
+ <classes>
+   <class name="com.automationexercise.pruebas.PracticaM4_TablaWebTest"/>
+      <methods>
+        <include name="testTablaWeb"/>
+      </methods>
+ </classes>
+ </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Mi Suite">
+ <test name="Mis Tests">
+ <classes>
+   <class name="com.automationexercise.pruebas.PracticaM3"/>
+   <class name="com.automationexercise.pruebas.PracticaM3_fallido"/>
+   <class name="com.automationexercise.pruebas.PracticaM3_DataProvider"/>
+ </classes>
+ </test> <!-- Test -->
+</suite> <!-- Suite -->
