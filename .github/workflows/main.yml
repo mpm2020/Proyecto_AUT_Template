@@ -1,0 +1,34 @@
+name: Selenium Tests (Chrome)
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  selenium:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: edit
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'maven'
+          cache-dependency-path: edit/pom.xml
+
+      - name: Run Selenium tests
+        run: mvn -B "-DsuiteXmlFiles=testng.xml" test
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: edit/target/surefire-reports/
